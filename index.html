@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu | Mạn Kitchen & Bar</title>
+<meta name="description" content="Menu Mạn Open Kitchen & Bar, quán nhậu Việt không khói thuốc, 104E Hàm Nghi, Q.1">
+<meta property="og:title" content="Menu | Mạn Kitchen & Bar">
+<meta property="og:image" content="https://manopenkitchenbar.github.io/menu/img/main-02.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Trang menu Mạn trên GitHub Pages. Ảnh từng trang nằm trong thư mục img/ (WebP đã nén).
+ * Đổi menu: thay ảnh cùng tên trong img/; thêm hoặc bớt trang thì sửa danh sách <img> bên dưới. */
+:root{--paua:#27214D;--red:#F15636;--cream:#FED1A5;--paper:#FFF8F1}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:Anybody,Arial,sans-serif;color:var(--paua);
+  background:linear-gradient(rgba(254,209,165,.55),rgba(254,209,165,.55)),#FED1A5 url(img/nen.png) repeat;background-size:auto,180px auto;
+  padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+.hero{background:var(--paua) url(img/nen-dau.png) repeat;background-size:180px auto;padding:30px 16px 0;text-align:center;border-bottom:4px solid var(--red)}
+.logo{display:block;width:170px;margin:0 auto 8px}
+.tag{color:var(--cream);font-size:12px;letter-spacing:.16em;margin:0 0 18px}
+.tabs{display:flex;justify-content:center;gap:6px}
+.tabs button{flex:1;max-width:220px;border:0;border-radius:8px 8px 0 0;padding:12px 8px 10px;background:rgba(254,209,165,.18);color:var(--cream);
+  font:inherit;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;line-height:1.2}
+.tabs button small{display:block;font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:none;opacity:.85;margin-top:3px}
+.tabs button.on{background:var(--red);color:#fff}
+.pages{max-width:720px;margin:0 auto;padding:14px 0}
+.pages img{display:block;width:100%;height:auto;margin:0 auto 10px;box-shadow:0 3px 12px rgba(39,33,77,.18);background:var(--paper)}
+.pages[hidden]{display:none}
+.note{text-align:center;font-size:12px;letter-spacing:.06em;color:var(--paua);opacity:.75;margin:4px 16px 0}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(39,33,77,.96);display:flex;justify-content:center}
+.bar a{display:block;width:100%;max-width:480px;text-align:center;padding:15px;background:var(--red);color:#fff;text-decoration:none;
+  font-weight:800;font-size:16px;letter-spacing:.12em;border-radius:6px}
+.bar a small{font-weight:500;font-size:12px;letter-spacing:.06em;opacity:.9;margin-left:6px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="logo" viewBox="160 232 550 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mạn">
+    <g fill="#FED1A5">
+      <path d="M429.24,297.69c-6.15,21.61-24.66,20.33-24.66,20.33v31.12s32.830,1.67,47.88-22.27c13.33-21.210,13.75-54.140,13.75-54.140h30.580v76.410h34.620v-103.740h-96.340s.32,30.68-5.82,52.29Z"/>
+      <path d="M643.35,297.69c-6.15-21.61-5.82-52.290-5.82-52.29h-96.34v103.74h34.62v-76.41h30.58s.42,32.92,13.75,54.14c15.04,23.94,47.88,22.27,47.88,22.27v-31.12s-18.51,1.29-24.66-20.33Z"/>
+      <path d="M369.24,297.69c-6.15-21.61-5.82-52.29-5.82-52.29h-158.12s.32,30.68-5.82,52.29c-6.15,21.61-24.66,20.33-24.66,20.33v31.12s32.83,1.67,47.88-22.27c13.33-21.21,13.75-54.14,13.75-54.14h30.58v76.41h34.69v-76.41h30.58s.42,32.92,13.75,54.14c15.04,23.94,47.88,22.27,47.880,22.27v-31.12s-18.51,1.29-24.66-20.33Z"/>
+    </g>
+    <path fill="#F15636" d="M478.56,332.82h-15.58c-2.33,0-4.22,1.89-4.22,4.22v8.8c0,1.84,1.49,3.33,3.33,3.33h17.35c1.84,0,3.330-1.49,3.33-3.33v-8.8c0-2.33-1.89-4.22-4.22-4.22Z"/>
+  </svg>
+  <p class="tag">KITCHEN &amp; BAR · 104E HÀM NGHI, Q.1</p>
+  <nav class="tabs">
+    <button type="button" id="tMain">Menu<small>Main menu</small></button>
+    <button type="button" id="tLate">Late hour<small>Sau 23h · After 11 PM</small></button>
+  </nav>
+</header>
+
+<main>
+<section class="pages" id="pMain">
+<img src="img/main-01.webp" width="1400" height="1975" alt="Menu Mạn trang 1" decoding="async">
+<img src="img/main-02.webp" width="1400" height="1975" alt="Menu Mạn trang 2" decoding="async">
+<img src="img/main-03.webp" width="1400" height="1975" alt="Menu Mạn trang 3" loading="lazy" decoding="async">
+<img src="img/main-04.webp" width="1400" height="1975" alt="Menu Mạn trang 4" loading="lazy" decoding="async">
+<img src="img/main-05.webp" width="1400" height="1975" alt="Menu Mạn trang 5" loading="lazy" decoding="async">
+<img src="img/main-06.webp" width="1400" height="1975" alt="Menu Mạn trang 6" loading="lazy" decoding="async">
+<img src="img/main-07.webp" width="1400" height="1975" alt="Menu Mạn trang 7" loading="lazy" decoding="async">
+<img src="img/main-08.webp" width="1400" height="1975" alt="Menu Mạn trang 8" loading="lazy" decoding="async">
+<img src="img/main-09.webp" width="1400" height="1975" alt="Menu Mạn trang 9" loading="lazy" decoding="async">
+<img src="img/main-10.webp" width="1400" height="1975" alt="Menu Mạn trang 10" loading="lazy" decoding="async">
+<img src="img/main-11.webp" width="1400" height="1975" alt="Menu Mạn trang 11" loading="lazy" decoding="async">
+<img src="img/main-12.webp" width="1400" height="1975" alt="Menu Mạn trang 12" loading="lazy" decoding="async">
+<img src="img/main-13.webp" width="1400" height="1975" alt="Menu Mạn trang 13" loading="lazy" decoding="async">
+<img src="img/main-14.webp" width="1400" height="1975" alt="Menu Mạn trang 14" loading="lazy" decoding="async">
+<img src="img/main-15.webp" width="1400" height="1975" alt="Menu Mạn trang 15" loading="lazy" decoding="async">
+<img src="img/main-16.webp" width="1400" height="1975" alt="Menu Mạn trang 16" loading="lazy" decoding="async">
+<img src="img/main-17.webp" width="1400" height="1975" alt="Menu Mạn trang 17" loading="lazy" decoding="async">
+<img src="img/main-18.webp" width="1400" height="1975" alt="Menu Mạn trang 18" loading="lazy" decoding="async">
+<img src="img/main-19.webp" width="1400" height="1975" alt="Menu Mạn trang 19" loading="lazy" decoding="async">
+<img src="img/main-20.webp" width="1400" height="1975" alt="Menu Mạn trang 20" loading="lazy" decoding="async">
+<img src="img/main-21.webp" width="1400" height="1975" alt="Menu Mạn trang 21" loading="lazy" decoding="async">
+<img src="img/main-22.webp" width="1400" height="1975" alt="Menu Mạn trang 22" loading="lazy" decoding="async">
+<img src="img/main-23.webp" width="1400" height="1975" alt="Menu Mạn trang 23" loading="lazy" decoding="async">
+<img src="img/main-24.webp" width="1400" height="1975" alt="Menu Mạn trang 24" loading="lazy" decoding="async">
+<img src="img/main-25.webp" width="1400" height="1975" alt="Menu Mạn trang 25" loading="lazy" decoding="async">
+</section>
+<section class="pages" id="pLate" hidden>
+<p class="note">Phục vụ từ 23h · Served from 11 PM</p>
+<img src="img/late-1.webp" width="1400" height="1982" alt="Menu Late Hour trang 1" loading="lazy" decoding="async">
+<img src="img/late-2.webp" width="1400" height="1982" alt="Menu Late Hour trang 2" loading="lazy" decoding="async">
+</section>
+</main>
+
+<div class="bar"><a href="https://manopenkitchenbar.github.io/datban/">ĐẶT BÀN<small>Book a table</small></a></div>
+
+<script>
+/* Mở thẳng menu Late hour bằng link .../menu/#late; không ghi rõ thì tự chọn Late hour từ 23h đến 3h sáng (giờ Việt Nam) */
+(function(){
+  var tM=document.getElementById('tMain'),tL=document.getElementById('tLate'),pM=document.getElementById('pMain'),pL=document.getElementById('pLate');
+  function chon(late,giuViTri){
+    tM.classList.toggle('on',!late);tL.classList.toggle('on',late);pM.hidden=late;pL.hidden=!late;
+    try{history.replaceState(null,'',late?'#late':location.pathname+location.search);}catch(e){}
+    if(!giuViTri)window.scrollTo(0,0);
+  }
+  tM.onclick=function(){chon(false);};tL.onclick=function(){chon(true);};
+  var gio=+new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:'Asia/Ho_Chi_Minh'}).format(new Date());
+  var late=location.hash==='#late'||(location.hash!=='#main'&&(gio>=23||gio<3));
+  chon(late,true);
+})();
+</script>
+</body>
+</html>
