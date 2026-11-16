@@ -114,6 +114,19 @@ src="https://www.facebook.com/tr?id=1810330426906115&ev=PageView&noscript=1"
 <div class="bar"><a href="https://manopenkitchenbar.github.io/datban/">ĐẶT BÀN<small>Book a table</small></a></div>
 
 <script>
+/* Giu UTM + fbclid tu link quang cao khi khach bam DAT BAN: noi query cua trang menu vao link /datban/ (khong ghi de tham so san co tren link) */
+(function(){
+  var a=document.querySelector('.bar a[href*="/datban/"]');
+  if(!a||!location.search)return;
+  try{
+    var u=new URL(a.href),q=new URLSearchParams(location.search);
+    q.forEach(function(v,k){if(!u.searchParams.has(k))u.searchParams.append(k,v);});
+    a.href=u.toString();
+  }catch(e){}
+})();
+</script>
+
+<script>
 /* Mở thẳng menu Late hour bằng link .../menu/#late; không ghi rõ thì tự chọn Late hour từ 23h đến 3h sáng (giờ Việt Nam) */
 (function(){
   var tM=document.getElementById('tMain'),tL=document.getElementById('tLate'),pM=document.getElementById('pMain'),pL=document.getElementById('pLate');
