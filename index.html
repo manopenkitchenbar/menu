@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
 /* Trang menu Mạn trên GitHub Pages. Ảnh từng trang nằm cùng thư mục với file này (WebP đã nén).
- * Đổi menu: tải ảnh mới cùng tên đè lên (main-01.webp ... late-2.webp); thêm hoặc bớt trang thì sửa danh sách <img> bên dưới. */
+ * Đổi menu: tải ảnh mới cùng tên đè lên (main-01.webp ... main-25.webp, drinks-1.webp, drinks-2.webp, late-1.webp, late-2.webp); thêm hoặc bớt trang thì sửa danh sách <img> bên dưới. */
 :root{--paua:#27214D;--red:#F15636;--cream:#FED1A5;--paper:#FFF8F1}
 *{box-sizing:border-box}
 html,body{margin:0}
@@ -26,9 +26,9 @@ body{font-family:Anybody,Arial,sans-serif;color:var(--paua);
 .logo{display:block;width:170px;margin:0 auto 8px}
 .tag{color:var(--cream);font-size:12px;letter-spacing:.16em;margin:0 0 18px}
 .tabs{display:flex;justify-content:center;gap:6px}
-.tabs button{flex:1;max-width:220px;border:0;border-radius:8px 8px 0 0;padding:12px 8px 10px;background:rgba(254,209,165,.18);color:var(--cream);
-  font:inherit;font-weight:800;font-size:14px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;line-height:1.2}
-.tabs button small{display:block;font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:none;opacity:.85;margin-top:3px}
+.tabs button{flex:1;max-width:220px;border:0;border-radius:8px 8px 0 0;padding:12px 4px 10px;background:rgba(254,209,165,.18);color:var(--cream);
+  font:inherit;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;line-height:1.2}
+.tabs button small{display:block;font-weight:500;font-size:10.5px;letter-spacing:.03em;text-transform:none;opacity:.85;margin-top:3px}
 .tabs button.on{background:var(--red);color:#fff}
 .pages{max-width:720px;margin:0 auto;padding:14px 0}
 .pages img{display:block;width:100%;height:auto;margin:0 auto 10px;box-shadow:0 3px 12px rgba(39,33,77,.18);background:var(--paper)}
@@ -72,6 +72,7 @@ src="https://www.facebook.com/tr?id=1810330426906115&ev=PageView&noscript=1"
   <p class="tag">KITCHEN &amp; BAR · 104E HÀM NGHI, Q.1</p>
   <nav class="tabs">
     <button type="button" id="tMain">Menu<small>Main menu</small></button>
+    <button type="button" id="tDrinks">Seasonal<small>Đồ uống theo mùa</small></button>
     <button type="button" id="tLate">Late hour<small>Sau 23h · After 11 PM</small></button>
   </nav>
 </header>
@@ -104,6 +105,11 @@ src="https://www.facebook.com/tr?id=1810330426906115&ev=PageView&noscript=1"
 <img src="main-24.webp" width="1400" height="1975" alt="Menu Mạn trang 24" loading="lazy" decoding="async">
 <img src="main-25.webp" width="1400" height="1975" alt="Menu Mạn trang 25" loading="lazy" decoding="async">
 </section>
+<section class="pages" id="pDrinks" hidden>
+<p class="note">Đồ uống theo mùa · Seasonal drinks</p>
+<img src="drinks-1.webp" width="1400" height="1982" alt="Seasonal drinks trang 1" loading="lazy" decoding="async">
+<img src="drinks-2.webp" width="1400" height="1982" alt="Seasonal drinks trang 2" loading="lazy" decoding="async">
+</section>
 <section class="pages" id="pLate" hidden>
 <p class="note">Phục vụ từ 23h · Served from 11 PM</p>
 <img src="late-1.webp" width="1400" height="1982" alt="Menu Late Hour trang 1" loading="lazy" decoding="async">
@@ -127,18 +133,18 @@ src="https://www.facebook.com/tr?id=1810330426906115&ev=PageView&noscript=1"
 </script>
 
 <script>
-/* Mở thẳng menu Late hour bằng link .../menu/#late; không ghi rõ thì tự chọn Late hour từ 23h đến 3h sáng (giờ Việt Nam) */
+/* 3 tab: Menu, Seasonal (đồ uống theo mùa), Late hour. Link .../menu/#drinks hoặc #late mở thẳng tab đó; không ghi rõ thì tự chọn Late hour từ 23h đến 3h sáng (giờ Việt Nam) */
 (function(){
-  var tM=document.getElementById('tMain'),tL=document.getElementById('tLate'),pM=document.getElementById('pMain'),pL=document.getElementById('pLate');
-  function chon(late,giuViTri){
-    tM.classList.toggle('on',!late);tL.classList.toggle('on',late);pM.hidden=late;pL.hidden=!late;
-    try{history.replaceState(null,'',late?'#late':location.pathname+location.search);}catch(e){}
+  var tabs={main:['tMain','pMain'],drinks:['tDrinks','pDrinks'],late:['tLate','pLate']};
+  function chon(ten,giuViTri){
+    Object.keys(tabs).forEach(function(k){document.getElementById(tabs[k][0]).classList.toggle('on',k===ten);document.getElementById(tabs[k][1]).hidden=k!==ten;});
+    try{history.replaceState(null,'',ten==='main'?location.pathname+location.search:location.pathname+location.search+'#'+ten);}catch(e){}
     if(!giuViTri)window.scrollTo(0,0);
   }
-  tM.onclick=function(){chon(false);};tL.onclick=function(){chon(true);};
+  Object.keys(tabs).forEach(function(k){document.getElementById(tabs[k][0]).onclick=function(){chon(k);};});
   var gio=+new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:'Asia/Ho_Chi_Minh'}).format(new Date());
-  var late=location.hash==='#late'||(location.hash!=='#main'&&(gio>=23||gio<3));
-  chon(late,true);
+  var h=location.hash.slice(1);
+  chon(tabs[h]?h:((gio>=23||gio<3)?'late':'main'),true);
 })();
 </script>
 </body>
